@@ -45,5 +45,9 @@
     "watch": "mocha --compilers ts:espower-typescript/guess --watch \"test/**/*.ts\"",
     "test-coverage": "mocha --compilers ts:ts-node/register --require source-map-support/register",
     "coverage": "npm run clean && nyc --reporter html --reporter text --extension .ts npm run test-coverage"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.1",
+    "chai": "^4.3.6"
   }
 }
