@@ -6,6 +6,20 @@ import * as assert from "assert";
 describe("上端点と下端点を持つことができる", () => {
   let cs: ClosedSection;
 
+  describe("同じ値である 1, 1 を渡すと上端点と下端点ともに 1 をもつ", () => {
+    beforeEach(() => {
+      cs = new ClosedSection(1, 1);
+    });
+
+    it("上端点として 1 が取得できる", () => {
+      assert.strictEqual(cs.top, 1);
+    });
+
+    it("下端点として1が取得できる", () => {
+      assert.strictEqual(cs.bottom, 1);
+    });
+  });
+
   describe("1, 3 を渡すとそれぞれ上端点と下端点にもつことができる", () => {
     beforeEach(() => {
       cs = new ClosedSection(1, 3);
