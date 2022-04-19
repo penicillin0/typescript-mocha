@@ -1,71 +1,25 @@
-# TDDBC for TypeScript with Node.js
+# ts-tdd
 
-これは、TDDBCのTypeScript向けプロジェクトです。
+## TODO
 
-## Documentation
+##### 正常系
 
-### 動作環境
+- [ ] 上端点と下端点をもつことができる
+  - [ ] 1, 3 を渡すとそれぞれ上端点と下端点にもつことができる(隣接していない方が多くのケースを想定できるのでそっちのが？)
+- [ ] 上端点と下端点から文字列表記にできる
+  - [ ] 1, 3 を渡すと"[1,3]"にできる
+- [ ] 指定した整数を含むのか判定できる
 
-* Node.js : 4以上
+  - [ ] "[1,3]"に 4 を入れると False を得る
+  - [ ] "[1,3]"に 1 を入れると True を得る
+  - [ ] "[1,3]"に 2 を入れると True を得る
 
-### セットアップ
+##### エラー系
 
-* まずはじめに、プロジェクトをcloneしてください。
+- [ ] 大小逆の上端点、下端点はもつことができない
 
-```sh
-$ git clone https://github.com/tddbc/typescript-mocha.git
-```
+  - [ ] 2, 1 を渡すとエラーとメッセージで停止
 
-* 次に、依存関係をダウンロードしてください。
+※ 渡す: class のコンストラクタにわたす
 
-```sh
-$ npm install
-```
-
-* 最後に、下記の様に表示されるか、確認してください。
-
-```sh
-$ npm test
-
-> typescript-mocha@0.1.0 pretest /path/to/projects/typescript-mocha
-> npm run lint
-
-
-> typescript-mocha@0.1.0 lint /path/to/projects/typescript-mocha
-> tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'
-
-
-> typescript-mocha@0.1.0 test /path/to/projects/typescript-mocha
-> mocha --compilers ts:ts-node/register --require source-map-support/register --full-trace --bail
-
-
-
-  Sample
-    .status
-      ✓ は、trueであるべき
-    #say()
-      ✓ は、"Hello TDDBC!"が返ってくるべき
-
-
-  2 passing (11ms)
-
-
-$ 
-```
-
-### コマンド
-
-| コマンド        | 内容                                                       |
-|:----------------|:-----------------------------------------------------------|
-| `npm test`      | lint とテストをまとめて行います                            |
-| `npm run lint`  | コードの静的検証を行います                                 |
-| `npm run watch` | ファイル変更を監視し、変更があったらテストを自動で行います |
-
-## License
-Copyright (c) 2017 TDD BaseCamp and other contributors
-
-http://devtesting.jp/tddbc/
-
-https://github.com/tddbc
-
-Licensed under the MIT license.
+※ 指定: 含有判定メソッドにわたす
